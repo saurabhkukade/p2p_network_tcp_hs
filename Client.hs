@@ -70,7 +70,7 @@ peerConnector host port handle = do
 
 main :: IO ()
 main = do
-    [port] <- getArgs
+    [serverAddr, serverPort, port] <- getArgs
     let selfPort = (read $ port :: Int)
     forkIO $ openSocket selfPort
-    connectToServer "127.0.0.1" 3336 selfPort
+    connectToServer serverAddr (read $ serverPort :: Int) selfPort

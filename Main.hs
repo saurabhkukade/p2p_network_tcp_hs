@@ -1,6 +1,9 @@
 module Main where
 
+import System.Environment (getArgs)
 import Server
 
 main :: IO ()
-main = runServer 3336
+main = do
+    [port] <- getArgs
+    runServer (read $ port :: Int)
