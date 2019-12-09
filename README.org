@@ -1,0 +1,14 @@
+* P2P Network Over TCP
+
+** Start Server
+
+#+BEGIN_SRC shell
+    cabal run 3333 # cabal run <port>
+#+END_SRC
+
+** Start Client
+
+#+BEGIN_SRC shell
+    ghc -threaded Client.hs
+    ./Client 127.0.0.1 3333 23234 # ./Client <server addr> <server port> <client port>
+#+END_SRC
